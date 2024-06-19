@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<p th:text="${msg}"></p>
+	<table>
+		<tr th:each="tempC: ${mydata}">
+			<td th:text="${tempC.getIdPr()}"></td>
+			<td th:text="${tempC.Mechanic.getIdM()}"></td>
+			<td th:text="${tempC.Car.getIdCar()}"></td>
+			<td th:text="${tempC.Part.getIdPa()}"></td>
+			<td th:text="${tempC.getPlannedReturn()}"></td>
+		</tr>
+
+	</table>
+
+
+
+</body>
+
+
+</html>

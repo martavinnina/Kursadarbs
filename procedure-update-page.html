@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<p>Please update procedure!</p>
+
+	<form action="#" th:action="@{/procedure/filter/update?id=__${id}__}" th:object="${procedure}" th:method="post">
+		<table>
+			<tr>
+				<td>Mechanic:</td>
+				<td> <input type="text" th:field="*{mechanic}" /> </td>
+				<td th:if="${#fields.hasErrors('mechanic')}" th:errors="*{mechanic}" ></td>
+			</tr>
+			<tr>
+				<td>Car:</td>
+				<td> <input type="text" th:field="*{car}" /> </td>
+				<td th:if="${#fields.hasErrors('car')}" th:errors="*{car}" ></td>
+			</tr>
+			<tr>
+				<td>Part:</td>
+				<td> <input type="text" th:field="*{part}" /> </td>
+				<td th:if="${#fields.hasErrors('part')}" th:errors="*{part}" ></td>
+			</tr>
+			<tr>
+				<td>PlannedReturn:</td>
+					<td> <input type="text" th:field="*{plannedReturn}" /> </td>
+					<td th:if="${#fields.hasErrors('plannedReturn')}" th:errors="*{plannedReturn}" ></td>
+			</tr>
+					
+			<tr>
+				<td> <input type="submit" name="Save"/></td>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+
+
+</html>

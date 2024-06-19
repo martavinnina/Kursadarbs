@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<p>Please update car!</p>
+
+	<form action="#" th:action="@{/car/filter/update?id=__${id}__}" th:object="${car}" th:method="post">
+		<table>
+			<tr>
+				<td>Brand:</td>
+				<td> <input type="text" th:field="*{brand}" /> </td>
+				<td th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}" ></td>
+			</tr>
+			<tr>
+				<td>CarNumber:</td>
+				<td> <input type="text" th:field="*{carNumber}" /> </td>
+				<td th:if="${#fields.hasErrors('carNumber')}" th:errors="*{carNumber}" ></td>
+			</tr>
+			<tr>
+				<td>Type:</td>
+				<td> <input type="text" th:field="*{type}" /> </td>
+				<td th:if="${#fields.hasErrors('type')}" th:errors="*{type}" ></td>
+			</tr>
+			<tr>
+				<td>Model:</td>
+					<td> <input type="text" th:field="*{model}" /> </td>
+					<td th:if="${#fields.hasErrors('model')}" th:errors="*{model}" ></td>
+			</tr>
+			<tr>
+				<td>Client:</td>
+				<td> <input type="text" th:field="*{client}" /> </td>
+				<td th:if="${#fields.hasErrors('client')}" th:errors="*{client}" ></td>
+			</tr>
+					
+			<tr>
+				<td> <input type="submit" name="Save"/></td>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+
+
+</html>
